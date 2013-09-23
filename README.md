@@ -71,3 +71,16 @@ INSTALLED_APPS = (
  most people dealing with this already know a lot and don't realize
  that a n00b might get lost.
  
+ 
+ Notes:
+ ======
+ 
+ The actual templates I used from Renyi were a little bit out of date with current Django template system.
+ To fix them, any parameter passed into a {% url %} block command has to be enclosed in strings.
+ 
+ Alternatively, you could just call:
+ ``` bash
+ $ python manage.py collecttemplates 
+ ```
+ This will copy all templates used by the current mezzanine project into your folder, so that you have them at hand.
+ Note that they will override the default ones.
