@@ -75,21 +75,26 @@ $(function() {
     {% block full %}
     <div class="row">
 
-        <div class="span9 middle">
+        <!-- <div class="span12 middle"> -->
+            <div class="span12 middle">
+              <ul class="breadcrumb-custom">
+              {% spaceless %}
+              {% block breadcrumb_menu %}{% page_menu "pages/menus/breadcrumb.html" %}{% endblock %}
+              {% endspaceless %}
+              </ul>
+            </div>
 
-            <ul class="breadcrumb-custom">
-            {% spaceless %}
-            {% block breadcrumb_menu %}{% page_menu "pages/menus/breadcrumb.html" %}{% endblock %}
-            {% endspaceless %}
-            </ul>
+            <div class="span3 left">
+              <div class="panel tree">{% page_menu "pages/menus/tree.html" %}</div>
+            </div>
+            <div class="span9 right">
+              <h1>{% block title %}{% endblock %}</h1>
+              {% block main %}{% endblock %}
+            </div>
 
-            <h1>{% block title %}{% endblock %}</h1>
+        <!-- </div> -->
 
-            {% block main %}{% endblock %}
-
-        </div>
-
-        <div class="span3 right">
+        <!-- <div class="span3 right">
 
             <div class="panel">
             {% block right_panel %}
@@ -99,7 +104,7 @@ $(function() {
             {% endblock %}
             </div>
 
-        </div>
+        </div> -->
 
     </div><!-- /row -->
     {% endblock %}
