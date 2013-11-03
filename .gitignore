@@ -1,7 +1,9 @@
+*~
 *.pyc
 *.pyo
 *.db
 .DS_Store
 .coverage
+sitedb
 local_settings.py
 /static
